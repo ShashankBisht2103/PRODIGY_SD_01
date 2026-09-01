@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>🌡 Temperature Converter</h1>
+                <p>Convert between Celsius, Fahrenheit, and Kelvin</p>
+            </div>
+
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="temperature">Enter Temperature:</label>
+                    <input 
+                        type="number" 
+                        id="temperature" 
+                        placeholder="Enter value"
+                        step="0.01"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="unit">Select Unit:</label>
+                    <select id="unit">
+                        <option value="Celsius">Celsius (°C)</option>
+                        <option value="Fahrenheit">Fahrenheit (°F)</option>
+                        <option value="Kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="convertBtn" class="btn btn-primary">Convert</button>
+                <button id="clearBtn" class="btn btn-secondary">Clear</button>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <h3>Converted Results:</h3>
+                <div id="results" class="results-grid"></div>
+            </div>
+
+            <div class="error-message" id="errorMessage" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
